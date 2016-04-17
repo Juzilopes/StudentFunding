@@ -1,0 +1,24 @@
+<h1>Student Funding</h1>
+
+<br/>
+	Company Name: 
+<br/>
+<input type="text" ng-model="companyName" placeholder="Company Name"/>
+<br/>
+	Field:
+<br/> 
+<input type="text" ng-model="field" placeholder="Filed"/>
+<br/>
+<button class="btn btn-primary" ng-click="addBursary()">	Add bursary
+</button>
+<br/>
+	Filter:
+<br/> 
+<input type="text" ng-model="filter"/> {{filter}}
+<br/>
+
+<ul>
+	<li ng-repeat="bursary in bursaries | filter:filter | orderBy:'companyName'">
+		{{bursary.companyName}} - {{bursary.field | uppercase}}
+	</li>
+</ul>
